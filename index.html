@@ -1,4 +1,88 @@
-<!DOCTYPE html>
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Game</title>
+
+  <!-- ✅ PWA (Installable App) Support -->
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker Registered'));
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f8f8f8;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fiza's Number Game 🎲</h1>
+  <input type="number" id="numberInput" placeholder="Enter number (1–10)" />
+  <button onclick="checkNumber()">Submit</button>
+  <p id="result"></p>
+
+  <script>
+    function checkNumber() {
+      var number = parseInt(document.getElementById("numberInput").value);
+      var message = "";
+
+      switch (number) {
+        case 1:
+          message = "You are lucky 🍀";
+          break;
+        case 2:
+          message = "Ap b best ho 🌟";
+          break;
+        case 3:
+          message = "Bad luck 😢";
+          break;
+        case 4:
+          message = "Ap to boht funny ho 😂";
+          break;
+        case 5:
+          message = "Ap logo ko boht tang krty ho batmeez 😝";
+          break;
+        case 6:
+          message = "You are happy 😊";
+          break;
+        case 7:
+          message = "Kunjoos ho ap to 🤑";
+          break;
+        case 8:
+          message = "Ap ki dosti boht achi ha 🤝";
+          break;
+        case 9:
+          message = "Ap boht naek ho 😇";
+          break;
+        case 10:
+          message = "Wafadar insan ❤️";
+          break;
+        default:
+          message = "Ap game ma add nahi ho 🙃";
+      }
+
+      document.getElementById("result").innerText = message;
+    }
+  </script>
+</body>
+</html><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
